@@ -138,10 +138,20 @@ export default function FormModal({ open, handleClose }) {
           />
         </FormGroup>
         <ButtonContainer>
-          <Button variant="outlined" size="small" onClick={handleClose}>
+          <Button
+            variant="outlined"
+            sx={{ borderRadius: "30px" }}
+            size="small"
+            onClick={handleClose}
+          >
             Cancel
           </Button>
-          <Button variant="contained" size="small" onClick={handleClose}>
+          <Button
+            sx={{ borderRadius: "30px" }}
+            variant="contained"
+            size="small"
+            onClick={handleClose}
+          >
             Save Changes
           </Button>
         </ButtonContainer>
