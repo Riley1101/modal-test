@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from "@mui/material/Button";
+import * as React from "react";
+import styled from "styled-components";
+import FormModal from "./components/modal";
+import useModal from "./components/modal/useModal";
+
+const StyledContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+`;
 
 function App() {
+  const { visible, handleToggle } = useModal();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledContainer>
+      <Button variant="contained" onClick={handleToggle}>
+        Open Modal
+      </Button>
+      <FormModal open={visible} handleClose={handleToggle} />
+    </StyledContainer>
   );
 }
 
